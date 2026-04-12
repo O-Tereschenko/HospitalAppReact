@@ -63,3 +63,50 @@ body {
   text-align: center;
   padding: 20px 0;
 }
+
+.doctor-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.doctor-card {
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.doctor-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.buy-btn {
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.buy-btn:hover {
+  background-color: #111827;
+}
+
+.counter {
+  margin-top: 10px;
+  font-weight: bold;
+}
