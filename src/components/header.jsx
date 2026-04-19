@@ -1,4 +1,4 @@
-function Header() {
+function Header({ cartCount }) {
   return (
     <header className="header">
       <div className="container nav">
@@ -9,6 +9,7 @@ function Header() {
             <li><a href="#">Головна</a></li>
             <li><a href="#">Каталог</a></li>
             <li><a href="#">Про нас</a></li>
+            <li><span className="cart-badge">Кошик: {cartCount}</span></li>
           </ul>
         </nav>
       </div>

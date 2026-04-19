@@ -1,6 +1,7 @@
+import PromoBanner from './PromoBanner';
 import DoctorCard from "./DoctorCard";
 
-function Main() {
+function Main({ setCartCount }) {
   const doctors = [
     {
       id: 1,
@@ -28,6 +29,8 @@ function Main() {
   return (
     <main className="main">
       <div className="container">
+        <PromoBanner />
+
         <h1>Каталог лікарів</h1>
         <p>
           Оберіть спеціаліста та виконайте запис на прийом.
@@ -35,7 +38,11 @@ function Main() {
 
         <div className="doctor-list">
           {doctors.map((doctor) => (
-            <DoctorCard key={doctor.id} doctor={doctor} />
+            <DoctorCard
+              key={doctor.id}
+              doctor={doctor}
+              setCartCount={setCartCount}
+            />
           ))}
         </div>
       </div>
