@@ -142,3 +142,13 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.nav-list a.active {
+  border-bottom: 2px solid white;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}

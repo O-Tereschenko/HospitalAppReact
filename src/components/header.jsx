@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function Header({ cartCount }) {
   return (
     <header className="header">
@@ -6,10 +8,10 @@ function Header({ cartCount }) {
 
         <nav>
           <ul className="nav-list">
-            <li><a href="#">Головна</a></li>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">Про нас</a></li>
-            <li><span className="cart-badge">Кошик: {cartCount}</span></li>
+            <li><NavLink to="/">Головна</NavLink></li>
+            <li><NavLink to="/catalog">Каталог</NavLink></li>
+            <li><NavLink to="/about">Про нас</NavLink></li>
+            <li>Кошик: {cartCount}</li>
           </ul>
         </nav>
       </div>

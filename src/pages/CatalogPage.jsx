@@ -1,7 +1,7 @@
-import PromoBanner from './PromoBanner';
-import DoctorCard from "./DoctorCard";
+import PromoBanner from "../components/PromoBanner";
+import DoctorCard from "../components/DoctorCard";
 
-function Main({ setCartCount }) {
+function CatalogPage({ setCartCount }) {
   const doctors = [
     {
       id: 1,
@@ -29,12 +29,11 @@ function Main({ setCartCount }) {
   return (
     <main className="main">
       <div className="container">
+
         <PromoBanner />
 
         <h1>Каталог лікарів</h1>
-        <p>
-          Оберіть спеціаліста та виконайте запис на прийом.
-        </p>
+        <p>Оберіть спеціаліста та виконайте запис на прийом.</p>
 
         <div className="doctor-list">
           {doctors.map((doctor) => (
@@ -45,9 +44,10 @@ function Main({ setCartCount }) {
             />
           ))}
         </div>
+
       </div>
     </main>
   );
 }
 
-export default Main;
+export default CatalogPage;
