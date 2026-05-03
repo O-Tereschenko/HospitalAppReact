@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import CatalogPage from "./pages/CatalogPage";
 import DoctorDetails from "./pages/DoctorDetails";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           />
           <Route path="/doctor/:id" element={<DoctorDetails setCartCount={setCartCount} />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contacts" element={<ContactPage />} />
         </Routes>
 
         <Footer />

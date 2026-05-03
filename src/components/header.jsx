@@ -11,6 +11,7 @@ function Header({ cartCount }) {
             <li><NavLink to="/">Головна</NavLink></li>
             <li><NavLink to="/catalog">Каталог</NavLink></li>
             <li><NavLink to="/about">Про нас</NavLink></li>
+            <li><NavLink to="/contacts">Контакти</NavLink></li>
             <li>Кошик: {cartCount}</li>
           </ul>
         </nav>
