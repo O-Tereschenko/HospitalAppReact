@@ -34,6 +34,20 @@ function ContactPage() {
     }
   };
 
+  const testError = async () => {
+  try {
+    await fetch(`${import.meta.env.VITE_API_URL}/doctors/store`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({})
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
   return (
     <main className="main">
       <div className="container">
@@ -73,6 +87,15 @@ function ContactPage() {
           <button type="submit" className="buy-btn">
             Відправити
           </button>
+
+          <button
+          className="buy-btn"
+          style={{ marginTop: "15px" }}
+          onClick={testError}
+        >
+          Тест помилки API
+        </button>
+
         </form>
       </div>
     </main>

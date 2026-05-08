@@ -10,7 +10,7 @@ function DoctorDetails({ setCartCount }) {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/doctors/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/doctors/${id}`)
       .then((response) => {
         setDoctor(response.data);
       });

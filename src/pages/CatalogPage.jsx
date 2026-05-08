@@ -17,7 +17,7 @@ function CatalogPage({ setCartCount }) {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/doctors")
+      .get(`${import.meta.env.VITE_API_URL}/doctors`)
       .then((response) => {
         setDoctors(response.data);
       })
