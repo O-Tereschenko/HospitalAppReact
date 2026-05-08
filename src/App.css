@@ -194,3 +194,15 @@ body {
   margin-top: 10px;
   width: 100%;
 }
+
+.categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}

@@ -1,30 +1,37 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 import PromoBanner from "../components/PromoBanner";
 import DoctorCard from "../components/DoctorCard";
 
 function CatalogPage({ setCartCount }) {
-  const doctors = [
-    {
-      id: 1,
-      name: "Євпатій Коловрат",
-      specialty: "Кардіолог",
-      price: 500,
-      image: "img/doctor1.jpg"
-    },
-    {
-      id: 2,
-      name: "Ілля Муромець",
-      specialty: "Терапевт",
-      price: 400,
-      image: "img/doctor2.jpg"
-    },
-    {
-      id: 3,
-      name: "Олександр Патріотович",
-      specialty: "Хірург",
-      price: 700,
-      image: "img/doctor3.png"
-    }
+  const [doctors, setDoctors] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Всі");
+
+  const categories = [
+    "Всі",
+    "Кардіолог",
+    "Терапевт",
+    "Хірург"
   ];
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/doctors")
+      .then((response) => {
+        setDoctors(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const filteredDoctors =
+    selectedCategory === "Всі"
+      ? doctors
+      : doctors.filter(
+          (doctor) => doctor.specialty === selectedCategory
+        );
 
   return (
     <main className="main">
@@ -35,8 +42,20 @@ function CatalogPage({ setCartCount }) {
         <h1>Каталог лікарів</h1>
         <p>Оберіть спеціаліста та виконайте запис на прийом.</p>
 
+        <div className="categories">
+          {categories.map((category, index) => (
+            <button
+              key={index}
+              className="buy-btn"
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="doctor-list">
-          {doctors.map((doctor) => (
+          {filteredDoctors.map((doctor) => (
             <DoctorCard
               key={doctor.id}
               doctor={doctor}
